@@ -1,0 +1,24 @@
+$header-height: 116px;
+$footer-height: 230px;
+
+.wrapper {
+  min-width: 100dvh !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer{
+  position:relative;
+  height: $footer-height;
+}
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.content {
+  flex: 1;
+  min-height: calc(100vh - $header-height - $footer-height);
+}

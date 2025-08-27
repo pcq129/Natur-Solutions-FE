@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "natur_solutions_fe": {
+    "natur_solutions": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "natur_solutions_fe:build:production"
+              "buildTarget": "natur_solutions:build:production"
             },
             "development": {
-              "buildTarget": "natur_solutions_fe:build:development"
+              "buildTarget": "natur_solutions:build:development"
             }
           },
           "defaultConfiguration": "development"

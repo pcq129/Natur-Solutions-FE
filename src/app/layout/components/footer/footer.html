@@ -1,0 +1,46 @@
+<footer>
+  <div class="logo">
+    <img src="/assets/layout/image.png" />
+  </div>
+  <div class="links">
+    <div>
+      <strong><h5 class="sectionName menu">Menu</h5></strong>
+      <ul class="grid-list">
+        <li>Products</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contacts</li>
+      </ul>
+    </div>
+    <div>
+      <strong><h5 class="sectionName contact">Contact</h5></strong>
+      <div class="contactDetails">
+        <div class="contacts">
+          <mat-icon> email</mat-icon><span class="email">support@natursolutions.com</span>
+        </div>
+        <div class="contacts">
+          <mat-icon> phone</mat-icon><span class="phone">+232 88 266 102</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <strong><h5 class="sectionName emailSection">Stay In Touch</h5></strong>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher"
+          placeholder="Ex. pat@example.com"
+        />
+
+        <button matSuffix matIconButton aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="country"></div>
+  <div class="policy"></div>
+</footer>

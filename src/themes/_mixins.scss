@@ -1,0 +1,17 @@
+/*
+ *  Dedicated file for custom SCSS mixins.
+ */
+
+@use '@angular/material' as mat;
+
+// :root {
+//   @include mat.select-overrides(
+//     (
+//       enabled-arrow-color: white,
+//       disabled-arrow-color: white,
+//       focused-arrow-color: white,
+//       panel-background-color: orange,
+//       enabled-trigger-text-color: red,
+//     )
+//   );
+// }

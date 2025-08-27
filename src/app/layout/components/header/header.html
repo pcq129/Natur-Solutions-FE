@@ -1,0 +1,29 @@
+<nav>
+  <!-- <div class="top-header">
+
+  </div> -->
+  <div class="bottom-header">
+    <div>
+      <img class="logo" src="/assets/layout/image.png" />
+    </div>
+    <div class="navItems">
+      <a matButton routerLink="/constructions">Constructions</a>
+      <a matButton routerLink="/products">Products</a>
+      <a matButton routerLink="/services">Services</a>
+      <a matButton routerLink="/news">News</a>
+      <a matButton routerLink="/about">About</a>
+      <a matButton routerLink="/contacts">Contact</a>
+
+      <mat-form-field class="languageSelector">
+      <!-- <mat-label>{{ currentLanguage() }}</mat-label> -->
+      <mat-select [value]="getCurrentLanguage()" class="matSelect">
+        @for (languageOptions of languages; track languageOptions) {
+        <mat-option [value]="languageOptions.value">{{ languageOptions.label }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+      <!-- TODO Implement search component -->
+      <!-- <button matButton  routerLink="" >Search</button>  -->
+    </div>
+  </div>
+</nav>

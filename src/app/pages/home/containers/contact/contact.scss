@@ -1,0 +1,57 @@
+.appContact {
+  display: flex;
+  justify-content: center;
+  background-color: #e9f6fd;
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 3px solid white;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 300px;
+  width: 300px;
+  margin: 30px 15px 30px 15px;
+  justify-content: space-between;
+}
+
+.contactHeading {
+  margin-bottom: 30px;
+}
+
+.contact{
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: large;
+}
+
+.contactCardBottom{
+  display: flex;
+  justify-content: space-between;
+  padding: auto 20px auto 20px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.blue {
+  background-color: rgb(34, 34, 131);
+}
+
+.yellow {
+  background-color: rgb(236, 216, 38);
+}
+
+.contactHeading {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: lighter;
+}
+
+.arrow{
+  // transform: rotate(45deg);
+  rotate: -45deg;
+  color: white;
+  font-size: 20px;
+}

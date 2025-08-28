@@ -1,0 +1,33 @@
+<div class="bannerContainer" (click)="bannerAction()">
+  <div
+    class="banner"
+    [style.background-image]="getBannerImageURL()"
+    [style.background-size]="'cover'"
+    [style.background-position]="'center'"
+  >
+    <div class="bannerData">
+      <div class="bannerHeading">
+        <h3>
+          {{ currentBannerTest().heading }}
+        </h3>
+      </div>
+      <div class="bannerText">
+        {{ currentBannerTest().text }}
+      </div>
+    </div>
+    <div class="bannerEmptySpace">
+      <div matButton class="buttonContainer">
+        <button (click)="previousBanner($event)" matFab aria-label="Example icon button with a delete icon">
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button
+          (click)="nextBanner($event)"
+          matFab
+          aria-label="Example icon button with a delete icon"
+        >
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,18 +25,18 @@
     </div>
     <div>
       <strong><h5 class="sectionName emailSection">Stay In Touch</h5></strong>
-      <mat-form-field appearance="outline" class="example-full-width">
+      <mat-form-field appearance="outline" class="emailInput">
         <mat-label>Email</mat-label>
         <input
           type="email"
           matInput
           [formControl]="emailFormControl"
-          [errorStateMatcher]="matcher"
           placeholder="Ex. pat@example.com"
+          #emailSubscribe
         />
 
-        <button matSuffix matIconButton aria-label="Clear">
-          <mat-icon>close</mat-icon>
+        <button matSuffix matIconButton (click)="subscribeNewsLetter(emailSubscribe.value)" aria-label="Clear">
+          <mat-icon>send</mat-icon>
         </button>
       </mat-form-field>
     </div>

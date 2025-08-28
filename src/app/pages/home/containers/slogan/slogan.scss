@@ -1,0 +1,48 @@
+.appSlogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 30%;
+  height: 900px;
+}
+
+.sloganText {
+  flex: 1;
+  font-size:3rem;
+  line-height: 1.2;
+  max-width: 50%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  font-weight: bolder;
+}
+
+.sloganImage {
+  flex: 1;
+  max-width: 300px;
+  min-height: 300px;
+  height: 400px;
+
+  background-size: cover;
+  background-position: center;
+
+  /* Apply mask */
+  -webkit-mask-image: url('/assets/mask.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-image: url('/assets/mask.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+strong {
+  font-weight: bold;
+  background: linear-gradient(90deg, #002366, #052dae, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  // text-fill-color: transparent;
+}

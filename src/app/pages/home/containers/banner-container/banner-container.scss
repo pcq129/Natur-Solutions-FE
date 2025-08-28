@@ -1,0 +1,63 @@
+.bannerContainer {
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+}
+
+.bannerData {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bannerData {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+
+.bannerEmptySpace {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-right: 40px;
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  margin: auto 20px 20px auto;
+}
+
+.buttonContainer button {
+  margin: 3px;
+}
+
+.bannerHeading {
+  height: calc(35% - 20px);
+  display: flex;
+  padding-bottom: 20px;
+  color: rgb(183, 183, 24);
+  font-size: 40px;
+  font-weight: bolder;
+  align-items: end;
+  width: 100%;
+}
+
+.bannerText {
+  height: calc(65% - 20px);
+  padding-top: 20px;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+}

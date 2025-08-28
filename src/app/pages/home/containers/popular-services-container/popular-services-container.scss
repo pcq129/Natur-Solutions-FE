@@ -1,0 +1,99 @@
+.appPopularService {
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eff4ff;
+}
+
+.popularServiceHeader {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // padding-right: 20px;
+  // padding-left: 20px;
+}
+
+// .popularServiceHeadingDescription{
+
+// }
+
+.popularServiceHeadingText {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.viewAll{
+  display: flex;
+  align-items: center;
+}
+
+
+.popularServiceHeading {
+  display: flex;
+  flex-direction: column;
+}
+
+.gradientHighlight {
+  font-weight: bold;
+  background: linear-gradient(90deg, #002366, #052dae, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// generated styles
+
+.popularServiceContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 20px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.popularServiceCard {
+  width: 400px;                 /* adjust to match screenshot */
+  border: 1px solid #e0e0e0;    /* light border */
+  border-radius: 6px;           /* rounded corners */
+  overflow: hidden;             /* clip image corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* subtle shadow */
+  background-color: #fff;       /* white background */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.popularServiceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.popularServiceImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 10%;
+  box-sizing: border-box;
+}
+
+.popularServiceData {
+  padding: 16px;
+}
+
+.popularServiceName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.popularServiceDescription {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+

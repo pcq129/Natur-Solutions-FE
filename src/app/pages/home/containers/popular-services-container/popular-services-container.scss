@@ -1,9 +1,18 @@
-.appPopularService {
-  height: 750px;
+.appPopularService{
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background-color: #eff4ff;
+}
+
+
+.spacer {
+  height: 750px;
+  display: flex;
+  width: 75rem;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
 }
 
 .popularServiceHeader {

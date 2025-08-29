@@ -1,5 +1,6 @@
 <div class="appContact">
-  @for (contactDetail of contactsData(); track $index) {
+  <div class="spacer">
+    @for (contactDetail of contactsData(); track $index) {
   <div class="contactCard {{ contactDetail.type == 2 ? 'blue' : 'yellow' }}">
     <div class="contactCardTop">
       <div class="contactHeading">{{ contactDetail.name }}</div>
@@ -13,4 +14,5 @@
     </div>
   </div>
   }
+  </div>
 </div>

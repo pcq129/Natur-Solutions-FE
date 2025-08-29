@@ -15,6 +15,10 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'login',
+    component: 
+  },
+  {
     path: '**',
     redirectTo: ''
   }

@@ -10,7 +10,7 @@
 @use 'themes/layout';
 @use 'themes/overrides';
 @use 'themes/variables';
-// @use 'themes/theme';
+@use "themes/theme" as *;
 
 html {
   @include mat.theme((

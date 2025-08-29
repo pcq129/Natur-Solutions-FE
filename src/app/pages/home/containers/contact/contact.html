@@ -1,14 +1,16 @@
 <div class="appContact">
-  <div class="contactCard {{ getCardClass() }}">
+  @for (contactDetail of contactsData(); track $index) {
+  <div class="contactCard {{ contactDetail.type == 2 ? 'blue' : 'yellow' }}">
     <div class="contactCardTop">
-      <div class="contactHeading">Contact Title</div>
-      <div class="contact">+919099104310</div>
+      <div class="contactHeading">{{ contactDetail.name }}</div>
+      <div class="contact">{{ contactDetail.contact }}</div>
     </div>
     <div class="contactCardBottom">
-      <span>Call Us</span>
-      <button matButton="outlined" class="btn">
+      <span>{{ contactDetail.buttonText }}</span>
+      <a matButton="outlined" class="btn" href="{{contactDetail.actionUrl}}" target="_blank">
         <mat-icon class="arrow">arrow_right_alt</mat-icon>
-      </button>
+      </a>
     </div>
   </div>
+  }
 </div>

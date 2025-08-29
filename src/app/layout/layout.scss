@@ -2,20 +2,24 @@ $header-height: 116px;
 $footer-height: 230px;
 
 .wrapper {
-  min-width: 100dvh !important;
+  // min-width: 100dvh !important;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer{
   position:relative;
   height: $footer-height;
+  width: 100%;
 }
 
 .header{
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .content {

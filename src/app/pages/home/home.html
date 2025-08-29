@@ -1,9 +1,14 @@
-  <div class="homeComponent">
-    <container-banner [bannerData]="data().banners"></container-banner>
-    <app-featured-product-container></app-featured-product-container>
-    <app-popular-services-container></app-popular-services-container>
-    <container-slogan></container-slogan>
-    <!-- <app-news></app-news> -->
-    <app-contact></app-contact>
-
-  </div>
+<div class="homeComponent">
+  @if (data()) {
+  <container-banner [bannerData]="data().banners"></container-banner>
+  <app-featured-product-container
+    [featuredProductData]="data().featuredProducts"
+  ></app-featured-product-container>
+  <app-popular-services-container
+    [popularServicesData]="data().popularServices"
+  ></app-popular-services-container>
+  <container-slogan></container-slogan>
+  <!-- <app-news></app-news> -->
+  <app-contact [contactsData]="data().contactDetails"></app-contact>
+  }
+</div>

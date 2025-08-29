@@ -55,7 +55,7 @@ export class HomeService {
           id: p.id,
           name: p.name,
           description: p.description,
-          image: p.image.file_path,
+          image: p.image,
         }));
 
         const popularServices: IService[] = data.featuredServices.map((s: any) => ({

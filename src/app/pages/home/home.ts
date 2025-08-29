@@ -8,7 +8,13 @@ import { HomeService, IHomeResponse } from './services/home-service';
 
 @Component({
   selector: 'app-home',
-  imports: [BannerContainer, Slogan, FeaturedProductContainer, PopularServicesContainer, Contact],
+  imports: [
+    BannerContainer,
+    Slogan,
+    FeaturedProductContainer,
+    PopularServicesContainer,
+    Contact,
+  ],
   providers: [HomeService],
   templateUrl: './home.html',
   styleUrl: './home.scss',
@@ -17,8 +23,8 @@ export class Home {
   private readonly _homeService = inject(HomeService);
 
   // TODO: implement interface for the data received from backend (time constraint for now).
-  /**
-   * {
+
+  data = signal<IHomeResponse>({
     banners: [
       {
         name: 'August two five test banner',
@@ -46,7 +52,7 @@ export class Home {
             link: 'https://unpkg.com/toastify-js@1.12.0/src/toastify.js',
           },
         },
-        priority: 1
+        priority: 1,
       },
     ],
     categories: [
@@ -71,31 +77,19 @@ export class Home {
         id: 1,
         name: 'productasdfadsf',
         description: null,
-        image: {
-          id: 2,
-          product_id: 3,
-          file_path: ''
-        },
+        image:'',
       },
       {
         id: 2,
         name: 'adfasdfasf',
         description: null,
-        image: {
-          id: 2,
-          product_id: 3,
-          file_path: ''
-        },
+        image: '',
       },
       {
         id: 5,
         name: 'Meta PRo',
         description: null,
-        image: {
-          id: 2,
-          product_id: 3,
-          file_path: ''
-        },
+        image: '',
       },
     ],
     popularServices: [
@@ -121,11 +115,13 @@ export class Home {
         actionUrl: 'http://google.co',
       },
     ],
-  }
-   */
-  data = signal<IHomeResponse>();
+  });
 
   ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
     this._homeService.getHomeData().subscribe((res) => {
       this.data.set(res);
     });

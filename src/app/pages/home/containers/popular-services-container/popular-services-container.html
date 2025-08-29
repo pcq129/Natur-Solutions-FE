@@ -1,28 +1,39 @@
 <div class="appPopularService">
   <div class="popularServiceHeader">
     <div class="popularServiceHeading">
-      <h3 class="popularServiceHeadingText">Popular <span class="gradientHighlight">Services</span></h3>
-      <p class="popularServiceHeadingDescription">A fully integrated ERP solution that covers virtually all aspects of a company's business,</p>
+      <h3 class="popularServiceHeadingText">
+        Popular <span class="gradientHighlight">Services</span>
+      </h3>
+      <p class="popularServiceHeadingDescription">
+        A fully integrated ERP solution that covers virtually all aspects of a company's business,
+      </p>
     </div>
     <div class="viewAll">
-      <button matButton="outlined">
-        View All
-      </button>
+      <button matButton="outlined">View All</button>
     </div>
   </div>
   <div class="popularServiceContainer">
+    @for (service of popularServicesData(); track $index) {
     <div class="popularServiceCard">
       <div class="popularServiceImage">
-        <img src="https://www.imf.org/-/media/Images/IMF/Topics/Fiscal/Fiscal-Risks/ToolkitImages/FADTOOLKIT-FINAL-FINAL.ashx">
+        <img
+          src="{{service.icon}}"
+        />
       </div>
       <div class="popularServiceData">
         <div class="popularServiceName">
-          Service Name
+          {{service.name}}
         </div>
         <div class="popularServiceDescription">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit aperiam recusandae dignissimos sed vitae, sequi laboriosam accusantium. Assumenda necessitatibus, veniam, odit sunt nisi ad, labore eligendi libero aliquid nulla sapiente.
+          {{service.description}}
         </div>
       </div>
+      <div class="detailButton">
+        <button matButton="outlined" (click)="redirectToServiceDetailPage(service.id)">
+        View Details
+      </button>
+      </div>
     </div>
+    }
   </div>
 </div>

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
-import { NgClass } from '@angular/common';
+import { IContact } from '../../interfaces';
 @Component({
   selector: 'app-contact',
   imports: [MatButton, MatIcon],
@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './contact.scss'
 })
 export class Contact {
-
+  contactsData = input.required<IContact[]>();
 
   getCardClass(){
     return "blue";

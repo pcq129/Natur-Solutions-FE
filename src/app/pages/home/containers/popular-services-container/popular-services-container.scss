@@ -55,7 +55,8 @@
 }
 
 .popularServiceCard {
-  width: 400px;                 /* adjust to match screenshot */
+  width: 400px;
+  height: 500px;                 /* adjust to match screenshot */
   border: 1px solid #e0e0e0;    /* light border */
   border-radius: 6px;           /* rounded corners */
   overflow: hidden;             /* clip image corners */
@@ -72,6 +73,10 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
+.popularServiceImage{
+  min-height: 60%;
+}
+
 .popularServiceImage img {
   width: 100%;
   height: auto;
@@ -81,7 +86,8 @@
 }
 
 .popularServiceData {
-  padding: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .popularServiceName {
@@ -95,5 +101,13 @@
   font-size: 14px;
   color: #666;
   line-height: 1.4;
+}
+
+.detailButton{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30% ;
+  padding-right: 30% ;
+  padding-top: 40px;
 }
 

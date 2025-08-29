@@ -1,10 +1,1 @@
-/*
- * Global application theme.
- * All global classes and theme styles for html elements and classes should be defined here.
- */
-
- label{
-
-  color: white;
- }
-
+@forward "theme";

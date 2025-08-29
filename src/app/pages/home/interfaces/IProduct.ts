@@ -3,7 +3,7 @@ export interface IProduct {
   id: number;
   name: string;
   description: string | null;
-  image: IProductImage | null; // mapped from product_files
+  image: string | null | undefined; // mapped from product_files
 }
 
 interface IProductImage {

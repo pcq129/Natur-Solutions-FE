@@ -5,16 +5,17 @@ import { TitleCasePipe } from '@angular/common';
 import { LanguageService } from '../../services/language-service';
 import { inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
-  imports: [MatSelectModule, MatButton, RouterLink],
+  imports: [MatSelectModule, MatButton],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
+  private router = inject(Router);
   private languageService = inject(LanguageService);
 
   _currentLanguage = this.languageService.getLocale();
@@ -37,5 +38,9 @@ export class Header {
 
   getCurrentLanguage(){
     return this._currentLanguage;
+  }
+
+  redirectToHomePage(){
+    this.router.navigate(['']);
   }
 }

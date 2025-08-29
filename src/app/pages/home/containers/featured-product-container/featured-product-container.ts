@@ -9,6 +9,6 @@ import { IProduct } from '../../interfaces';
   styleUrl: './featured-product-container.scss'
 })
 export class FeaturedProductContainer {
-  featuredProductData = input<IProduct[]>();
+  featuredProductData = input.required<IProduct[]>();
 
 }

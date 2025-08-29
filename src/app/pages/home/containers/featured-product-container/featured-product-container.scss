@@ -23,11 +23,10 @@
   line-height: 1.2;
 }
 
-.viewAll{
+.viewAll {
   display: flex;
   align-items: center;
 }
-
 
 .featuredProductHeading {
   display: flex;
@@ -44,7 +43,7 @@
 
 // generated styles
 
-.featuredProductContainer{
+.featuredProductContainer {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -54,12 +53,13 @@
 }
 
 .featuredProductCard {
-  width: 400px;                 /* adjust to match screenshot */
-  border: 1px solid #e0e0e0;    /* light border */
-  border-radius: 6px;           /* rounded corners */
-  overflow: hidden;             /* clip image corners */
+  width: 400px; /* adjust to match screenshot */
+  height: 500px;
+  border: 1px solid #e0e0e0; /* light border */
+  border-radius: 6px; /* rounded corners */
+  overflow: hidden; /* clip image corners */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* subtle shadow */
-  background-color: #fff;       /* white background */
+  background-color: #fff; /* white background */
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -69,6 +69,10 @@
 .featuredProductCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.featuredProductImage{
+  min-height: 60%;
 }
 
 .featuredProductImage img {
@@ -81,6 +85,7 @@
 
 .featuredProductData {
   padding: 16px;
+  height: fit-content;
 }
 
 .featuredProductName {
@@ -94,5 +99,12 @@
   font-size: 14px;
   color: #666;
   line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+   text-overflow: ellipsis;
 }
+
 

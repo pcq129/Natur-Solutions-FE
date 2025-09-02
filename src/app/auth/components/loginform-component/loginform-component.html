@@ -1,0 +1,68 @@
+<div class="formContainer">
+  <div class="logo">
+    <img
+      class="ngslogo"
+      src="assets/loginComponent/nature_global_solutions_logo_dark.svg"
+      alt="Natur Global Solutions Logo"
+    />
+  </div>
+
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login(this.loginForm.getRawValue())" class="login-form">
+    <div>
+      <mat-form-field class="loginDataInput">
+        <mat-label>Email Address</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          class="emailInput"
+          id="emailInput"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+        />
+        @if( loginForm.controls.email.hasError('required') ) {<mat-error
+          >Email is <b>required</b></mat-error
+        >} @if( loginForm.controls.email.hasError('email') ){
+        <mat-error>Invalid email</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="loginDataInput">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          class="passwordInput"
+          id="passwordInput"
+          type="password"
+          placeholder="Enter your password"
+        />
+        @if(loginForm.controls.password.hasError('required')){
+        <mat-error>Password is <b>required</b></mat-error>
+        }
+        <!-- <button type="button" class="toggle-password">👁</button> -->
+      </mat-form-field>
+    </div>
+
+    <div class="form-options">
+      <mat-checkbox formControlName="remember">Remember me</mat-checkbox>
+      <a routerLink="/forgot-password">Forgot Password ?</a>
+    </div>
+
+    <button type="submit" class="btn-login">Login →</button>
+  </form>
+
+  <div class="signup-link">
+    Don’t have an account?
+    <a routerLink="/signup">Create New Account</a>
+  </div>
+
+  <div class="policy-links">
+    <a routerLink="/privacy-policy">Privacy Policy</a> |
+    <a routerLink="/terms-conditions">Terms & Conditions</a>
+  </div>
+</div>

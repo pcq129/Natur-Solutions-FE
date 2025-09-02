@@ -1,0 +1,54 @@
+<div class="appSignup">
+  <div class="brandLogo">
+    <img
+      class="ngslogo"
+      src="assets/loginComponent/nature_global_solutions_logo_dark.svg"
+      alt="Natur Global Solutions Logo"
+    />
+  </div>
+
+  <form (ngSubmit)="signup(this.signupForm.getRawValue())" [formGroup]="signupForm" class="signupForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      @if(signupForm.controls.name.hasError('required')){
+      <mat-error>Name is <b>required</b></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      @if(signupForm.controls.email.hasError('required')){
+      <mat-error>Email is <b>required</b></mat-error>
+      } @if(signupForm.controls.email.hasError('email')){
+      <mat-error><b>Invalid</b> email address</mat-error>
+
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" />
+      @if(signupForm.controls.name.hasError('required')){
+      <mat-error>Password is <b>required</b></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input matInput formControlName="passwordConfirmation" />
+      @if(signupForm.controls.name.hasError('required')){
+      <mat-error>Confirm Password is <b>required</b></mat-error>
+      }
+    </mat-form-field>
+
+    <div class="form-options">
+      <mat-checkbox formControlName="agreeToS">Remember me</mat-checkbox>
+      <a routerLink="/forgot-password">Forgot Password ?</a>
+    </div>
+
+    <button matButton="filled" type="submit" class="btn-login">Sign Up →</button>
+
+  </form>
+</div>

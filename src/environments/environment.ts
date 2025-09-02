@@ -6,4 +6,5 @@ export const environment = {
   defaultLanguage: 'de-DE',
   supportedLanguages: ['de-DE', 'en-US', 'es-ES', 'fr-FR', 'it-IT'],
   apiUrl: 'http://localhost:8000/api/',
+  csrfUrl: 'http://localhost:8000/sanctum/csrf-cookie'
 };

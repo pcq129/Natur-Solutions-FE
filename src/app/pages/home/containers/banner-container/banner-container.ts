@@ -1,10 +1,18 @@
-import { Component, computed, input, WritableSignal } from '@angular/core';
+import { Component, computed, input, OnInit, WritableSignal } from '@angular/core';
 import { IBanner } from '../../interfaces';
 import { ELanguage, EStatus } from '../../../../core/enums';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { signal, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// import Swiper from 'swiper/bundle';
+
+// import styles bundle
+// import 'swiper/css/bundle';
 
 @Component({
   selector: 'container-banner',
@@ -12,8 +20,33 @@ import { Router } from '@angular/router';
   templateUrl: './banner-container.html',
   styleUrl: './banner-container.scss',
 })
-export class BannerContainer {
+export class BannerContainer implements OnInit{
   private router = inject(Router);
+
+  ngOnInit(): void {
+    this.swiper = new Swiper('.myswiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  }
+  swiper : any;
 
   readonly emptyBanner: IBanner[] = [
     {
@@ -33,7 +66,7 @@ export class BannerContainer {
   ];
 
   bannerData = input<IBanner[]>(this.emptyBanner);
-  private index: WritableSignal<number> = signal(0);
+  index: WritableSignal<number> = signal(0);
   currentBanner = signal<IBanner>(this.bannerData()[0]);
   currentBannerTest = computed(() => this.bannerData()[this.index()]);
 
@@ -41,8 +74,6 @@ export class BannerContainer {
     event.stopPropagation();
     if (this.index() < this.bannerData().length - 1) {
       this.index.set(this.index() + 1);
-    } else {
-      console.log('not allowed', this.index());
     }
   }
 
@@ -50,8 +81,6 @@ export class BannerContainer {
     event.stopPropagation();
     if (this.index() >= 1) {
       this.index.set(this.index() - 1);
-    } else {
-      console.log('not allowed', this.index());
     }
   }
 
@@ -67,7 +96,7 @@ export class BannerContainer {
     }
   }
 
-  getBannerImageURL() {
+  getBannerImageURL(banner : IBanner) {
     return 'url(' + this.currentBannerTest().image + ')';
   }
 }

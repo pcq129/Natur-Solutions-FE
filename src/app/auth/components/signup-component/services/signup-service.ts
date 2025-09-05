@@ -3,12 +3,14 @@ import { BaseService } from '../../../../core/services/base-service';
 import { ISignUpData } from '../interface/ISignUpData';
 import { AUTH_API } from '../../../../../environments/APIs/authApi';
 import { Router } from '@angular/router';
+import { SnackbarService } from '../../../../shared/services/snackbar-service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignupService extends BaseService {
   private readonly _router = inject(Router);
+  private readonly _snackbar = inject(SnackbarService);
 
   signup(signupData: ISignUpData) {
     this._http
@@ -20,11 +22,11 @@ export class SignupService extends BaseService {
       })
       .subscribe({
         next: (res) => {
-          console.log(res);
+          this._snackbar.success('Signed Up Successfully');
           this._router.navigate(['home']);
         },
         error: (err) => {
-          console.log(err);
+          this._snackbar.error(err.error.message);
         },
       });
   }

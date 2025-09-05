@@ -79,6 +79,11 @@
 
 .featuredProductImage{
   min-height: 60%;
+
+  img{
+    	max-height: 100%;
+      width: auto;
+  }
 }
 
 .featuredProductImage img {

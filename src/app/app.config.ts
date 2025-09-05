@@ -9,8 +9,9 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
 import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient, withXsrfConfiguration } from '@angular/common/http';
+// import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
+import { authInterceptor } from './auth/interceptors/auth-interceptor';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -19,11 +20,12 @@ const appearance: MatFormFieldDefaultOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(
-      withXsrfConfiguration({ cookieName: 'XSRF-TOKEN', headerName: 'X-XSRF-TOKEN' })
+      withXsrfConfiguration({ cookieName: 'XSRF-TOKEN', headerName: 'X-XSRF-TOKEN' }),
+      withInterceptors([authInterceptor])
     ),
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideAnimationsAsync(),
+    // provideAnimationsAsync(),
     provideRouter(routes),
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: appearance },
   ],

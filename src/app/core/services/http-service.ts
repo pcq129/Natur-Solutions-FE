@@ -15,13 +15,14 @@ export class HttpService {
       headers: {
         noauth: String(auth), // Ad noauth header to bypass custom api prefix interceptor
       },
+      params: params ?? {}
     });
   }
 
   public postRequest(endpoint: string, params?: Params) {
     return this._http.post(endpoint, params ?? {}, {
       headers: { Accept: 'application/json' },
-      withCredentials: true,
+      // withCredentials: true,
     });
   }
 }

@@ -1,0 +1,18 @@
+<div class="appBranchOffice">
+  <div class="background">
+    <div class="branchOfficeCard">
+      <div class="branch">
+        <p class="branchName">{{ CurrentBranch?.name ?? 'Not Available' }}</p>
+        <p class="branchAddress">
+          {{
+            CurrentBranch?.address ?? '20 Cooper Square, New York, NY 10003, USA.2nd Street Dorm.'
+          }}
+        </p>
+      </div>
+      <div class="buttons">
+        <button (click)="previous()" [disabled]="pointer === 0">←</button>
+        <button (click)="next()" [disabled]="pointer === BranchData().length-1">→</button>
+      </div>
+    </div>
+  </div>
+</div>

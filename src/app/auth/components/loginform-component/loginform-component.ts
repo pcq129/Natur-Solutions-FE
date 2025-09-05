@@ -5,6 +5,7 @@ import { ILoginData } from '../login-component/interfaces/ILoginData';
 import { LoginService } from '../login-component/login-service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInput } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-loginform-component',
@@ -15,6 +16,7 @@ import { MatInput } from '@angular/material/input';
     MatLabel,
     MatCheckboxModule,
     MatInput,
+    RouterModule
   ],
   templateUrl: './loginform-component.html',
   styleUrl: './loginform-component.scss',

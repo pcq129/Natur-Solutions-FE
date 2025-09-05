@@ -1,23 +1,27 @@
 import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateFn, RedirectCommand, Router } from '@angular/router';
-
-const authenticationRoutes = ['login', 'signup', 'forgot-password'];
+import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
+  const token = localStorage.getItem('auth_token');
+  const url = state.url;
 
-  console.log(route, state, route.routeConfig?.path === 'login');
-  if (checkSiteList(state.url) && localStorage.getItem('auth_token')) {
-    return new RedirectCommand(router.createUrlTree(['/home']));
+  if (token) {
+    // User is logged in
+    if (isPublicRoute(url)) {
+      // Logged in but trying to access login/signup → redirect to /home
+      return router.createUrlTree(['/home']);
+    }
+    return true; // allow access to private pages
   }
-  return true;
+  return true; // allow access to public pages
 };
 
-function checkSiteList(url: string): boolean {
-  authenticationRoutes.forEach((element) => {
-    if (url.endsWith(element)) {
-      return false;
-    }
-  });
-  return true;
+function isPublicRoute(url: string): boolean {
+  return ['/login', '/signup', '/forgot-password'].includes(url);
+}
+
+function isPrivateRoute(url: string): boolean {
+  // Example: anything under /home is private
+  return url.startsWith('/home');
 }

@@ -1,14 +1,15 @@
 <div class="homeComponent">
-  @if (data()) {
-  <container-banner [bannerData]="data().banners"></container-banner>
+  @if (data(); as d) {
+  <container-banner [bannerData]="d.banners"></container-banner>
   <app-featured-product-container
-    [featuredProductData]="data().featuredProducts"
+    [featuredProductData]="d.featuredProducts"
   ></app-featured-product-container>
   <app-popular-services-container
-    [popularServicesData]="data().popularServices"
+    [popularServicesData]="d.popularServices"
   ></app-popular-services-container>
   <container-slogan></container-slogan>
+  <app-branch-office-container [BranchData]="d.branchOffices"></app-branch-office-container>
   <!-- <app-news></app-news> -->
-  <app-contact [contactsData]="data().contactDetails"></app-contact>
+  <app-contact [contactsData]="d.contactDetails"></app-contact>
   }
 </div>

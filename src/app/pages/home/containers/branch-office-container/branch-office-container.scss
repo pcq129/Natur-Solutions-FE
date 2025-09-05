@@ -1,0 +1,104 @@
+.appBranchOffice {
+  height: 100%;
+  width: 100%;
+  max-height: 1000px;
+  min-height: 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  background-image: url('/assets/home/image.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: end;
+  padding: 3rem;
+  width: 75%;
+}
+
+.branchOfficeCard {
+  background: rgba(255, 255, 255, 0.25); /* semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  // border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+  padding: 2rem;
+  // background-color: #ccc;
+}
+
+
+// .branchOfficeCard {
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+//   width: 280px;
+//   padding: 20px;
+//   text-align: center;
+
+//   /* Glassmorphism style */
+//   background: rgba(255, 255, 255, 0.25);
+//   backdrop-filter: blur(10px);
+//   -webkit-backdrop-filter: blur(10px);
+
+//   border-radius: 12px;
+//   border: 1px solid rgba(255, 255, 255, 0.3);
+//   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+// }
+
+.branchName {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d4ed8; /* similar blue */
+  margin-bottom: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.branchAddress {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.buttons button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #222c38;
+  background: transparent;
+  cursor: pointer;
+  color: black;
+  transition: all 0.2s ease;
+}
+
+.buttons button:hover {
+  background: #f1f5f9;
+}
+

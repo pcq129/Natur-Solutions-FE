@@ -13,7 +13,12 @@
       <a matButton routerLink="/news">News</a>
       <a matButton routerLink="/about">About</a>
       <a matButton routerLink="/contacts">Contact</a>
+      @if(isLoggedIn){
+      <button matButton="filled" (click)="logout()">Logout</button>
+      }@else {
+      <a matButton="filled" [routerLink]="['/auth']">Sign In</a>
 
+      }
       <mat-form-field class="languageSelector">
         <!-- <mat-label>{{ currentLanguage() }}</mat-label> -->
         <mat-select [value]="getCurrentLanguage()" class="matSelect">

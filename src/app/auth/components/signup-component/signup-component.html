@@ -1,54 +1,91 @@
 <div class="appSignup">
-  <div class="brandLogo">
-    <img
-      class="ngslogo"
-      src="assets/loginComponent/nature_global_solutions_logo_dark.svg"
-      alt="Natur Global Solutions Logo"
-    />
-  </div>
-
-  <form (ngSubmit)="signup(this.signupForm.getRawValue())" [formGroup]="signupForm" class="signupForm">
-    <mat-form-field>
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name" />
-      @if(signupForm.controls.name.hasError('required')){
-      <mat-error>Name is <b>required</b></mat-error>
-      }
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" />
-      @if(signupForm.controls.email.hasError('required')){
-      <mat-error>Email is <b>required</b></mat-error>
-      } @if(signupForm.controls.email.hasError('email')){
-      <mat-error><b>Invalid</b> email address</mat-error>
-
-      }
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" />
-      @if(signupForm.controls.name.hasError('required')){
-      <mat-error>Password is <b>required</b></mat-error>
-      }
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Confirm Password</mat-label>
-      <input matInput formControlName="passwordConfirmation" />
-      @if(signupForm.controls.name.hasError('required')){
-      <mat-error>Confirm Password is <b>required</b></mat-error>
-      }
-    </mat-form-field>
-
-    <div class="form-options">
-      <mat-checkbox formControlName="agreeToS">Remember me</mat-checkbox>
-      <a routerLink="/forgot-password">Forgot Password ?</a>
+  <div class="top">
+    <div class="brandLogo">
+      <img
+        class="ngslogo"
+        src="assets/loginComponent/nature_global_solutions_logo_dark.svg"
+        alt="Natur Global Solutions Logo"
+      />
     </div>
 
-    <button matButton="filled" type="submit" class="btn-login">Sign Up →</button>
+    <form
+      (ngSubmit)="signup(this.signupForm.getRawValue())"
+      [formGroup]="signupForm"
+      class="signupForm"
+    >
+      <mat-form-field
+      class="signupInput">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+        @if(signupForm.controls.name.hasError('required')){
+        <mat-error>Name is <b>required</b></mat-error>
+        }
+      </mat-form-field>
 
-  </form>
+      <mat-form-field
+      class="signupInput">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        @if(signupForm.controls.email.hasError('required')){
+        <mat-error>Email is <b>required</b></mat-error>
+        } @if(signupForm.controls.email.hasError('email')){
+        <mat-error><b>Invalid</b> email address</mat-error>
+
+        }
+      </mat-form-field>
+
+      <mat-form-field
+      class="signupInput">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+        @if(signupForm.controls.name.hasError('required')){
+        <mat-error>Password is <b>required</b></mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field
+      class="signupInput">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput formControlName="passwordConfirmation" />
+        @if(signupForm.controls.name.hasError('required')){
+        <mat-error>Confirm Password is <b>required</b></mat-error>
+        }
+      </mat-form-field>
+
+      <div class="form-options">
+        <mat-checkbox formControlName="agreeToS">I Accept <a routerLink="/terms-and-conditions">Terms & Conditions</a></mat-checkbox>
+
+      </div>
+
+      <button type="submit" class="btn-submit">Sign Up →</button>
+    </form>
+  </div>
+  <div class="bottom">
+    <div class="bottom-content">
+      <p>
+        Already have an account?
+        <a
+          [routerLink]="['/login']"
+          title="Login here"
+        >
+          Login here
+        </a>
+      </p>
+      <ul  class="bottom_link">
+        <li  class="ng-star-inserted">
+          <a  title="Privacy Policy" href="/solution/privacy-policy">
+            Privacy Policy
+          </a>
+        </li>
+        <li  class="ng-star-inserted">
+          <a
+            title="Terms &amp; Conditions"
+            href="/solution/terms-and-conditions"
+          >
+            Terms &amp; Conditions
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

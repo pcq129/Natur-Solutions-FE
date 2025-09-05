@@ -50,7 +50,7 @@
 
     <div class="form-options">
       <mat-checkbox formControlName="remember">Remember me</mat-checkbox>
-      <a routerLink="/forgot-password">Forgot Password ?</a>
+      <a [routerLink]="['/forgot-password']">Forgot Password ?</a>
     </div>
 
     <button type="submit" class="btn-login">Login →</button>
@@ -58,11 +58,11 @@
 
   <div class="signup-link">
     Don’t have an account?
-    <a routerLink="/signup">Create New Account</a>
+    <a [routerLink]="['/signup']">Create New Account</a>
   </div>
 
   <div class="policy-links">
-    <a routerLink="/privacy-policy">Privacy Policy</a> |
-    <a routerLink="/terms-conditions">Terms & Conditions</a>
+    <a [routerLink]="['/privacy-policy']">Privacy Policy</a> |
+    <a [routerLink]="['/terms-conditions']">Terms & Conditions</a>
   </div>
 </div>

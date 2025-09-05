@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { map } from 'rxjs';
 
 import { IBanner, ICategory, IButton, IContact, IProduct, IService } from '../interfaces';
+import { IBranchOffice } from '../containers/branch-office-container/branch-office-container';
 
 export interface IHomeResponse {
   banners: IBanner[];
@@ -12,6 +13,7 @@ export interface IHomeResponse {
   featuredProducts: IProduct[];
   popularServices: any[]; // you can strongly type later
   contactDetails: IContact[];
+  branchOffices: IBranchOffice[];
 }
 
 @Injectable({
@@ -73,13 +75,18 @@ export class HomeService {
           actionUrl: c.action_url,
         }));
 
-        console.log({ banners, categories, featuredProducts, popularServices, contactDetails });
+        const branchOffices : IBranchOffice[] = data.branchOffices.map((bo: any) => ({
+          name: bo.name,
+          address: bo.address
+        }))
+
         return {
           banners,
           categories,
           featuredProducts,
           popularServices,
           contactDetails,
+          branchOffices
         };
       })
     );

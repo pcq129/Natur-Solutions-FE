@@ -43,3 +43,20 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-simple-snackbar {
+  font-size: 1.2em;
+  color: white;
+}
+
+.snackbar-error.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background-color: rgb(185, 55, 55) !important;
+}
+
+.snackbar-success.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background-color: rgb(27, 128, 27) !important;
+}
+
+.snackbar-info.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background-color: rgb(32, 110, 134) !important;
+}

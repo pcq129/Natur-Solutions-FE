@@ -3,10 +3,11 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [MatInputModule, ReactiveFormsModule, MatIcon, MatButtonModule],
+  imports: [MatInputModule, ReactiveFormsModule, MatIcon, MatButtonModule, RouterModule],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })

@@ -7,46 +7,63 @@ import { authGuard } from './auth/guards/auth-guard';
 import { SignupComponent } from './auth/components/signup-component/signup-component';
 import { ForgotPasswordComponent } from './auth/components/forgot-password-component/forgot-password-component';
 import { LoginformComponent } from './auth/components/loginform-component/loginform-component';
+import { ResetPasswordComponent } from './auth/components/reset-password-component/reset-password-component';
+import { CmsComponent } from './pages/cms/components/cms-component/cms-component';
+import { cmsResolverResolver } from './pages/cms/resolvers/cms-resolver-resolver';
 
 export const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: Layout,
-    canActivate: [authGuard],
     children: [
       {
         path: '',
         component: Home,
       },
+      {
+        path: 'documentations/:cms',
+        component: CmsComponent,
+        resolve: {
+          cms: cmsResolverResolver,
+        },
+      },
     ],
   },
   {
-    path: '',
+    path: 'auth',
     component: LoginLayout,
     canActivate: [authGuard],
     children: [
       {
         path: 'signup',
         component: SignupComponent,
-      },{
-        path: 'login',
+      },
+      {
+        path: '',
         component: LoginformComponent,
-      },{
+      },
+      {
         path: 'forgot-password',
         component: ForgotPasswordComponent,
       },
-    ]
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent,
+      },
+
+    ],
   },
-  {
-    path: 'signup',
-    component: SignupComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'forgot-password',
-    component: ForgotPasswordComponent,
-    canActivate: [authGuard],
-  },
+  // {
+  //   path: 'signup',
+  //   component: SignupComponent,
+  //   canActivate: [authGuard],
+  // },
+
+  // {
+  //   path: 'forgot-password',
+  //   component: ForgotPasswordComponent,
+  //   canActivate: [authGuard],
+  // },
   {
     path: '**',
     redirectTo: '',

@@ -25,7 +25,7 @@ export class LoginService extends BaseService {
         if (res?.data?.token) {
           localStorage.setItem('auth_token', res.data.token);
           this._router.navigate(['home']);
-          this._authService.isLoggedIn.next(true);
+          this._authService.isLoggedIn.set(true);
           this._sanckbar.success(res.message);
         }
       },
@@ -41,7 +41,7 @@ export class LoginService extends BaseService {
     this._authService.logout().subscribe({
       next: (res) => {
         localStorage.removeItem('auth_token');
-        this._authService.isLoggedIn.next(false);
+        this._authService.isLoggedIn.set(false);
         this._sanckbar.success(res.message);
       },
       error: (err) => {

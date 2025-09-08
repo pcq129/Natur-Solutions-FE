@@ -31,7 +31,6 @@ nav {
   width: 90%;
 }
 
-
 .languageSelector {
   // margin-top: $margin;
   // margin-bottom: $margin;
@@ -60,16 +59,19 @@ nav {
     color: white !important; // arrow color
   }
 
-  ::ng-deep mat-pseudo-checkbox{
+  ::ng-deep mat-pseudo-checkbox {
     display: none;
   }
 }
-
 
 .matSelect {
   color: white;
 }
 
-.navItems a {
-  color: rgb(209, 207, 207) !important;
+.navItems {
+  display: flex;
+  align-items: center;
+  a {
+    color: rgb(209, 207, 207) !important;
+  }
 }

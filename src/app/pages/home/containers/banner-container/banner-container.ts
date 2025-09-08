@@ -1,14 +1,17 @@
-import { Component, computed, input, OnInit, WritableSignal } from '@angular/core';
+import { AfterViewInit, Component, computed, ElementRef, input, OnInit, ViewChild, WritableSignal } from '@angular/core';
 import { IBanner } from '../../interfaces';
 import { ELanguage, EStatus } from '../../../../core/enums';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { signal, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import Swiper from 'swiper';
+import {Swiper} from 'swiper';
+import { Navigation, Pagination, Scrollbar} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+
 // import Swiper from 'swiper/bundle';
 
 // import styles bundle
@@ -20,33 +23,34 @@ import 'swiper/css/pagination';
   templateUrl: './banner-container.html',
   styleUrl: './banner-container.scss',
 })
-export class BannerContainer implements OnInit{
-  private router = inject(Router);
+export class BannerContainer implements AfterViewInit {
+  @ViewChild('nextEl', { static: false }) nextEl!: ElementRef;
+  @ViewChild('prevEl', { static: false }) prevEl!: ElementRef;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.swiper = new Swiper('.myswiper', {
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
-
-      // If we need pagination
+      slidesPerView: 1,
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
+      // navigation: {
+      //   nextEl: this.nextEl.nativeElement,
+      //   prevEl: this.prevEl.nativeElement,
+      // },
+      // scrollbar: {
+      //   el: '.swiper-scrollbar',
+      // },
     });
+
+    Swiper.use([Navigation, Pagination, Scrollbar]);
   }
-  swiper : any;
+
+  private router = inject(Router);
+
+  swiper!: Swiper;
 
   readonly emptyBanner: IBanner[] = [
     {
@@ -79,9 +83,10 @@ export class BannerContainer implements OnInit{
 
   previousBanner(event: MouseEvent) {
     event.stopPropagation();
-    if (this.index() >= 1) {
-      this.index.set(this.index() - 1);
-    }
+    this.swiper.slidePrev();
+    // if (this.index() >= 1) {
+    //   this.index.set(this.index() - 1);
+    // }
   }
 
   bannerAction() {
@@ -96,7 +101,8 @@ export class BannerContainer implements OnInit{
     }
   }
 
-  getBannerImageURL(banner : IBanner) {
-    return 'url(' + this.currentBannerTest().image + ')';
+  getBannerImageURL(banner: IBanner) {
+    // return 'url(' + this.currentBannerTest().image + ')';
+    // return this.currentBannerTest();
   }
 }

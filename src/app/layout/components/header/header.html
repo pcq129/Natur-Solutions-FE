@@ -7,26 +7,26 @@
       <a href=""><img class="logo" src="/assets/layout/image.png" /></a>
     </div>
     <div class="navItems">
-      <a matButton routerLink="/constructions">Constructions</a>
-      <a matButton routerLink="/products">Products</a>
-      <a matButton routerLink="/services">Services</a>
-      <a matButton routerLink="/news">News</a>
-      <a matButton routerLink="/about">About</a>
-      <a matButton routerLink="/contacts">Contact</a>
-      @if(isLoggedIn){
+      <a matButton [routerLink]="['documentations/constructions']">Constructions</a>
+      <a matButton [routerLink]="['/products']">Products</a>
+      <a matButton [routerLink]="['/services']">Services</a>
+      <a matButton [routerLink]="['/news']">News</a>
+      <a matButton [routerLink]="['/about']">About</a>
+      <a matButton [routerLink]="['/contacts']">Contact</a>
+      @if(isLoggedIn()){
       <button matButton="filled" (click)="logout()">Logout</button>
-      }@else {
-      <a matButton="filled" [routerLink]="['/auth']">Sign In</a>
+      }@else{
+      <button matButton="filled" [routerLink]="['/auth']">Sign In</button>
 
       }
-      <mat-form-field class="languageSelector">
-        <!-- <mat-label>{{ currentLanguage() }}</mat-label> -->
+      <!-- <mat-form-field class="languageSelector">
+        <mat-label>{{ currentLanguage() }}</mat-label>
         <mat-select [value]="getCurrentLanguage()" class="matSelect">
           @for (languageOptions of languages; track languageOptions) {
           <mat-option [value]="languageOptions.value">{{ languageOptions.label }}</mat-option>
           }
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
       <!-- TODO Implement search component -->
       <!-- <button matButton  routerLink="" >Search</button>  -->
     </div>

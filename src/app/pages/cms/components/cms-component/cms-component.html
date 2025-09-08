@@ -1,7 +1,18 @@
 <div class="appCms">
-  <div class="cmsName">
-    {{getTitle(cms()!.name)}}
-  </div>
-  <div class="cmsBody" [innerHTML]="cms()!.cms">
+  <div class="cmsContainer">
+    <div class="breadCrumb">
+      @for (item of location; track $index) {
+        @if($index !== location.length-1){
+          <span class="grey">{{item}} </span>/
+        }@else {
+          <span class="blue">{{item}}</span>
+        }
+      }
+    </div>
+    <div class="cmsName">
+      {{getTitle(cms()!.name)}}
+    </div>
+    <div class="cmsBody" [innerHTML]="cms()!.cms">
+    </div>
   </div>
 </div>

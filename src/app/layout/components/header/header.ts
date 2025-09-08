@@ -32,12 +32,6 @@ export class Header implements OnInit {
   }));
 
   ngOnInit(): void {
-    this._authService._isLoggedIn.subscribe({
-      next: (res) => {
-        console.log(res);
-        this.isLoggedIn = res;
-      },
-    });
   }
 
   readonly languageOptions: ELanguage[] = Object.values(ELanguage) as ELanguage[];
@@ -62,5 +56,5 @@ export class Header implements OnInit {
     this._loginService.logout();
   }
 
-  isLoggedIn = false;
+  isLoggedIn = this._authService.isLoggedIn;
 }

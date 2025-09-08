@@ -7,12 +7,15 @@
 }
 
 .banner {
-  width: 100%;
-  // max-width: 2000px;
+  width: 70rem;
+  height: 100%;
+  max-width: 2000px;
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
   justify-content: space-evenly;
+  padding-right: 10rem;
+  padding-left: 10rem;
 }
 
 .bannerData {
@@ -22,9 +25,8 @@
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 15%;
+  padding-left: 6rem;
 }
-
 
 .bannerEmptySpace {
   width: 100%;
@@ -40,8 +42,23 @@
   margin: auto 20px 20px auto;
 }
 
-.buttonContainer button {
-  margin: 3px;
+.bannerImage {
+  height: 35rem;
+  aspect-ratio: 1.5/1;
+  width: auto;
+  // max-width: 800px;
+  float: left;
+  // position: relative;
+  // right: 2rem;
+  // bottom: 0;
+  max-height: 50rem;
+}
+
+.bannerImageContainer {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  width: 100%;
 }
 
 .bannerHeading {
@@ -63,23 +80,39 @@
   font-size: large;
   font-weight: bold;
 }
+// .swiper-slide {
+//   text-align: center;
+//   font-size: 18px;
+//   background: #444;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 400px;
+//   object-fit: cover;
+// }
+// .swiper {
+//   width: 100%;
+//   // height: 100%;
+// }
+
+.swiper {
+  width: 100%;
+}
+
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #444;
+  width: 100% !important; /* Force full width */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* ensure visible */
+  z-index: 10;
 }
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-

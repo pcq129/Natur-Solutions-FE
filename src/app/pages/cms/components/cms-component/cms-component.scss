@@ -1,15 +1,47 @@
 .appCms{
   height: 100%;
-  width: 100%;
-  padding: 20%;
-  padding-top: 4rem;
+  // width: 70rem;
+  // max-width: 70rem;
+  margin:0 2rem;
+  padding:2rem 4rem;
   box-sizing: border-box;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+}
+
+.cmsContainer{
+  max-width: 70rem;
+  margin-top: 2rem;
 }
 
 .cmsName{
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 38px;
+  font-weight: 700;
   padding-bottom: 20px;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
+}
 
+.cmsBody{
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+
+  strong{
+    font-weight: 600;
+  }
+}
+
+.breadCrumb{
+  font-size: 1rem;
+  padding-bottom: 2rem;
+  font-weight: 700;
+}
+
+.blue{
+  color: #0e218f ;
+}
+
+.grey{
+  color: grey;
 }

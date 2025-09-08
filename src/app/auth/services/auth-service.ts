@@ -1,5 +1,5 @@
 import { IResetPasswordData } from './../components/reset-password-component/reset-password-component';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IForgotPasswordFormData } from '../components/forgot-password-component/forgot-password-component';
@@ -77,6 +77,6 @@ export class AuthService {
     );
   }
 
-  isLoggedIn = new BehaviorSubject<boolean>(localStorage.getItem('auth_token') ? true : false);
-  _isLoggedIn = this.isLoggedIn.asObservable();
+  isLoggedIn = signal<boolean>(localStorage.getItem('auth_token') ? true : false);
+  
 }

@@ -43,15 +43,15 @@
 }
 
 .bannerImage {
-  height: 35rem;
-  aspect-ratio: 1.5/1;
-  width: auto;
+  height: auto;
+  // aspect-ratio: 1.3/1.8;
   // max-width: 800px;
   float: left;
+
   // position: relative;
   // right: 2rem;
   // bottom: 0;
-  max-height: 50rem;
+  max-width: 100%;
 }
 
 .bannerImageContainer {
@@ -79,6 +79,9 @@
   width: 100%;
   font-size: large;
   font-weight: bold;
+  color: rgb(218, 218, 218);
+  line-height: 1.5;
+  text-overflow: ellipsis;
 }
 // .swiper-slide {
 //   text-align: center;

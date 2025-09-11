@@ -70,11 +70,13 @@
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .featuredProductCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 
 .featuredProductImage{

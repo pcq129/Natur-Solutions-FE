@@ -10,6 +10,7 @@ import { LoginformComponent } from './auth/components/loginform-component/loginf
 import { ResetPasswordComponent } from './auth/components/reset-password-component/reset-password-component';
 import { CmsComponent } from './pages/cms/components/cms-component/cms-component';
 import { cmsResolverResolver } from './pages/cms/resolvers/cms-resolver-resolver';
+import { ProductDetailComponent } from './pages/product/components/product-detail-component/product-detail-component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,10 @@ export const routes: Routes = [
           cms: cmsResolverResolver,
         },
       },
+      {
+        path: 'products/:productId',
+        component: ProductDetailComponent,
+      }
     ],
   },
   {

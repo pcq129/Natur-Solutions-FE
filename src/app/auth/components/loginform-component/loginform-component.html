@@ -38,22 +38,39 @@
           formControlName="password"
           class="passwordInput"
           id="passwordInput"
-          type="password"
+          [type]="hide() ? 'password' : 'text'"
           placeholder="Enter your password"
         />
+        <button
+          matIconButton
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+          type="button"
+        >
+          <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+
         @if(loginForm.controls.password.hasError('required')){
         <mat-error>Password is <b>required</b></mat-error>
         }
-        <!-- <button type="button" class="toggle-password">👁</button> -->
       </mat-form-field>
     </div>
 
     <div class="form-options">
       <mat-checkbox formControlName="remember">Remember me</mat-checkbox>
-      <a [routerLink]="['/forgot-password']">Forgot Password ?</a>
+      <a [routerLink]="['forgot-password']">Forgot Password ?</a>
     </div>
 
-    <button type="submit" class="btn-login">Login →</button>
+    <button type="submit" class="btn-login">
+      Login →
+      @if(loginInProgress()){
+        <div class="spinner">
+          <mat-spinner diameter="20"> </mat-spinner>
+        </div>
+      }
+    </button>
   </form>
 
   <div class="signup-link">

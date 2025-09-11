@@ -1,16 +1,24 @@
-import { AfterViewInit, Component, computed, ElementRef, input, OnInit, ViewChild, WritableSignal } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  computed,
+  ElementRef,
+  input,
+  OnInit,
+  ViewChild,
+  WritableSignal,
+} from '@angular/core';
 import { IBanner } from '../../interfaces';
 import { ELanguage, EStatus } from '../../../../core/enums';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { signal, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import {Swiper} from 'swiper';
-import { Navigation, Pagination, Scrollbar} from 'swiper/modules';
+import { Swiper } from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 
 // import Swiper from 'swiper/bundle';
 
@@ -28,24 +36,27 @@ export class BannerContainer implements AfterViewInit {
   @ViewChild('prevEl', { static: false }) prevEl!: ElementRef;
 
   ngAfterViewInit(): void {
-    this.swiper = new Swiper('.myswiper', {
-      direction: 'horizontal',
-      loop: true,
-      slidesPerView: 1,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // navigation: {
-      //   nextEl: this.nextEl.nativeElement,
-      //   prevEl: this.prevEl.nativeElement,
-      // },
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-    });
+    setTimeout(() => {
+      this.swiper = new Swiper('.myswiper', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: false,
+        },
+        lazyPreloadPrevNext: 2
+        // navigation: {
+        //   nextEl: this.nextEl.nativeElement,
+        //   prevEl: this.prevEl.nativeElement,
+        // },
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      });
 
-    Swiper.use([Navigation, Pagination, Scrollbar]);
+      Swiper.use([Navigation, Pagination, Scrollbar]);
+    }, 500);
   }
 
   private router = inject(Router);

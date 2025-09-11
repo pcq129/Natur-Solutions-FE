@@ -9,7 +9,6 @@ import { map } from 'rxjs';
 })
 export class CmsService extends BaseService {
   private readonly _httpService = inject(HttpService);
-  private readonly _endpoints = API;
 
   getCms(cms: string) {
     return this._httpService

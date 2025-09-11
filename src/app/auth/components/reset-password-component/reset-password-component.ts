@@ -19,6 +19,7 @@ export class ResetPasswordComponent implements OnInit {
     this._route.queryParams.subscribe({
       next: (res) => {
         this.token = res['token'];
+        this.email = res['email'];
       },
     });
   }
@@ -29,9 +30,10 @@ export class ResetPasswordComponent implements OnInit {
   private readonly _snackbar = inject(SnackbarService);
 
   private token: string = '';
+  private email: string = '';
 
   resetPasswordForm = this._formBuilder.nonNullable.group({
-    email: this._formBuilder.nonNullable.control('', [Validators.required, Validators.email]),
+    // email: this._formBuilder.nonNullable.control('', [Validators.required, Validators.email]),
     password: this._formBuilder.nonNullable.control('', [Validators.required]),
     confirmPassword: this._formBuilder.nonNullable.control('', [
       Validators.required,
@@ -42,6 +44,7 @@ export class ResetPasswordComponent implements OnInit {
   resetPassword(resetData: IResetPasswordData) {
     if (this.resetPasswordForm.valid) {
       resetData.token = this.token;
+      resetData.email = this.email;
       this._authService.resetPassword(resetData).subscribe({
         next: (res: any
         ) => {
@@ -58,7 +61,7 @@ export class ResetPasswordComponent implements OnInit {
 }
 
 export interface IResetPasswordData {
-  email: string;
+  email?: string;
   password: string;
   confirmPassword: string;
   token?: string;

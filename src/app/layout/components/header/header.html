@@ -11,7 +11,7 @@
       <a matButton [routerLink]="['/products']">Products</a>
       <a matButton [routerLink]="['/services']">Services</a>
       <a matButton [routerLink]="['/news']">News</a>
-      <a matButton [routerLink]="['/about']">About</a>
+      <a matButton [routerLink]="['documentations/about']">About</a>
       <a matButton [routerLink]="['/contacts']">Contact</a>
       @if(isLoggedIn()){
       <button matButton="filled" (click)="logout()">Logout</button>

@@ -1,0 +1,118 @@
+<div class="appProductDetail">
+  <div class="container">
+    <div class="productOverview">
+      <div class="breadCrumb">Home/Hardware/Fiscal Devices/Wireless/CRWL123</div>
+      <div class="dualPaneContainer">
+        <div class="productPreview">
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="productSummary">
+          <div class="productBriefing">
+            <div class="title">
+              {{ ProductData()?.name }}
+            </div>
+            <div class="productDescription" [innerHTML]="productDescription()?.content"></div>
+          </div>
+          <div class="actions">
+            <div class="orderProduct">
+              <div class="counter">
+                <button [disabled]="addBtnDisabled()" class="qtyChangeBtn" (click)="addCount(true)">
+                  +
+                </button>
+                <span>{{ count }}</span>
+                <button
+                  [disabled]="removeBtnDisabled()"
+                  class="qtyChangeBtn"
+                  (click)="addCount(false)"
+                >
+                  -
+                </button>
+              </div>
+              <div class="buyNow">
+                <button class="makePurchase">Buy now</button>
+              </div>
+            </div>
+            <div class="minQty">Minimum Quantity : {{ ProductData().minimumQuantity }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="productSections">
+      @for (section of filteredSections; track $index) {
+      <app-detail-section [sectionData]="section"></app-detail-section>
+      }
+
+      <app-comments></app-comments>
+      <!-- <app-contact [contactsData]=""></app-contact> -->
+    </div>
+  </div>
+</div>

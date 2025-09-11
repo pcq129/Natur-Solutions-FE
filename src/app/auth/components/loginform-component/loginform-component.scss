@@ -66,6 +66,10 @@
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
         &:hover {
           background: #d9a62d;
@@ -85,6 +89,13 @@
           text-decoration: underline;
         }
       }
+    }
+
+    .spinner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px; // spacing before "Login →"
     }
 
     .policy-links {

@@ -12,6 +12,7 @@ import { routes } from './app.routes';
 // import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
 import { authInterceptor } from './auth/interceptors/auth-interceptor';
+import { loaderInterceptor } from './layout/interceptors/loader-interceptor';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -21,7 +22,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(
       withXsrfConfiguration({ cookieName: 'XSRF-TOKEN', headerName: 'X-XSRF-TOKEN' }),
-      withInterceptors([authInterceptor])
+      withInterceptors([authInterceptor, loaderInterceptor])
     ),
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),

@@ -14,7 +14,7 @@
   </div>
   <div class="featuredProductContainer">
     @for (product of featuredProductData() ; track $index) {
-    <div class="featuredProductCard">
+    <div class="featuredProductCard" (click)="redirectToProductPage(product.id)">
       <div class="featuredProductImage">
         <img src="{{ product.image }}" />
       </div>

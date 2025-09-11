@@ -28,6 +28,7 @@ export class Home {
 
   data = signal<IHomeResponse | null>(null);
 
+
   ngOnInit() {
     this.fetchData();
   }
@@ -35,6 +36,7 @@ export class Home {
   fetchData() {
     this._homeService.getHomeData().subscribe((res) => {
       this.data.set(res);
+      this
     });
   }
 }
